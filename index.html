@@ -99,10 +99,28 @@
           required
         />
       </div>
-      <label>E-mail</label>
-      <input type="text" name="mail" size="25" required />
+      <div>
+        <div class="error">
+          <label for="mail">{{ mail.mail }}</label>
+          <p v-if="mail.seenMail">{{ mail.mailError }}</p>
+        </div>
+        <input
+          id="mail"
+          type="text"
+          name="mail"
+          size="47"
+          @input="mailInput"
+          required
+        />
+      </div>
       <label></label>
-      <input type="submit" id="submit" value="Зарегистрироваться" required />
+      <input
+        type="submit"
+        id="submit"
+        @click="submitClick"
+        :disabled="disabled"
+        required
+      />
     </form>
   </body>
 </html>

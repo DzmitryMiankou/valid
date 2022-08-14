@@ -2,9 +2,11 @@
 const Form = {
     data() {
         return {
+            disabled: null,
             regex: {
                 regLetter: /^[а-яА-Я'][а-яА-Я-' ]+[а-яА-Я']?$/,
                 regLoginPassword: /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/,
+                regEmail: /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
             },
             name: {
                 name: `Ваше имя`, 
@@ -19,7 +21,7 @@ const Form = {
             login: {
                 login: `Логин`,
                 seenLogin: false,
-                loginErrorText: `латинская буква, цифры (f34rf_)`,
+                loginErrorText: `латинская буква и цифры (f34rf_)`,
             },
             pass: {
                 pass: `Пароль`,
@@ -38,6 +40,14 @@ const Form = {
                 age: `Возраст`,
                 seenAge: false,
                 ageError: `не верный возраст`
+            },
+            mail: {
+                mail: `E-mail`,
+                seenMail: false,
+                mailError: `не верный E-mail`,
+            },
+            submit: {
+                submit: `Зарегистрироваться`,
             }
         }
     },
@@ -76,6 +86,13 @@ const Form = {
             let ev = Math.floor(event.target.value)
             ev < 6 || ev > 125 || isNaN(ev)? this.age.seenAge = true: this.age.seenAge = false
         },
+        mailInput(event) {
+            const test = this.regex.regEmail.test(event.target.value)
+            test === false? this.mail.seenMail = true: this.mail.seenMail = false
+        },
+        submitClick(event) {
+            this.name.seenName || this.family.seenFamily || this.login.seenLogin || this.pass.seenPass || this.pass2.seenPass2 || this.age.seenAge || this.mail.seenMail  === true? event.preventDefault(): null
+        }
     }
 }
 
