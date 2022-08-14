@@ -85,8 +85,20 @@
           required
         />
       </div>
-      <label>Возраст</label>
-      <input type="text" name="age" size="25" required />
+      <div>
+        <div class="error">
+          <label for="age">{{ age.age }}</label>
+          <p v-if="age.seenAge">{{ age.ageError }}</p>
+        </div>
+        <input
+          id="age"
+          type="text"
+          name="age"
+          size="47"
+          @input="ageInput"
+          required
+        />
+      </div>
       <label>E-mail</label>
       <input type="text" name="mail" size="25" required />
       <label></label>

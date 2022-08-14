@@ -32,22 +32,27 @@ const Form = {
                 pass1: null,
                 seenPass2: false,
                 pass2: `Повторите пароль`,
-                passError2: `Пороль не совпадает`,
+                passError2: `Пароль не совпадает`,
+            },
+            age: {
+                age: `Возраст`,
+                seenAge: false,
+                ageError: `не верный возраст`
             }
         }
     },
     methods: {
         nameImput(event) {
             const test = this.regex.regLetter.test(event.target.value)
-            test === false? this.name.seenName = true: this.name.seenName = false;
+            test === false? this.name.seenName = true: this.name.seenName = false
         },
         familyImput(event) {
             const test = this.regex.regLetter.test(event.target.value)
-            test === false? this.family.seenFamily = true: this.family.seenFamily = false;
+            test === false? this.family.seenFamily = true: this.family.seenFamily = false
         },
         loginImput(event) {
              const test = this.regex.regLoginPassword.test(event.target.value)
-             test === false? this.login.seenLogin = true: this.login.seenLogin = false;
+             test === false? this.login.seenLogin = true: this.login.seenLogin = false
         },
         passImput(event) {
             if(event.target.value.length < 7 ) {
@@ -66,6 +71,10 @@ const Form = {
         },
         pass2Input(event) {
             event.target.value !== this.pass2.pass1? this.pass2.seenPass2 = true: this.pass2.seenPass2 = false
+        },
+        ageInput(event) {
+            let ev = Math.floor(event.target.value)
+            ev < 6 || ev > 125 || isNaN(ev)? this.age.seenAge = true: this.age.seenAge = false
         },
     }
 }
