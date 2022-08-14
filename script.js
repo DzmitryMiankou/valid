@@ -2,7 +2,6 @@
 const Form = {
     data() {
         return {
-            disabled: null,
             regex: {
                 regLetter: /^[а-яА-Я'][а-яА-Я-' ]+[а-яА-Я']?$/,
                 regLoginPassword: /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/,

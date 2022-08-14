@@ -82,14 +82,9 @@
         </div>
         <input id="mail" type="text" name="mail" @input="mailInput" required />
       </div>
-      <label></label>
-      <input
-        type="submit"
-        id="submit"
-        @click="submitClick"
-        :disabled="disabled"
-        required
-      />
+      <button type="submit" id="submit" @click="submitClick">
+        {{submit.submit}}
+      </button>
     </form>
   </body>
 </html>
