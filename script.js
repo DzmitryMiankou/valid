@@ -27,6 +27,12 @@ const Form = {
                 passError: ``,
                 PassErrorText: `только цифры и латинский`,
                 PassErrorTextLength: `пароль не может быть меньше 6 символов`,
+            },
+            pass2: {
+                pass1: null,
+                seenPass2: false,
+                pass2: `Повторите пароль`,
+                passError2: `Пороль не совпадает`,
             }
         }
     },
@@ -44,7 +50,7 @@ const Form = {
              test === false? this.login.seenLogin = true: this.login.seenLogin = false;
         },
         passImput(event) {
-            if(event.target.value.length < 6 ) {
+            if(event.target.value.length < 7 ) {
                 this.pass.PassError = this.pass.PassErrorTextLength
                 this.pass.seenPass = true
             } else {
@@ -55,8 +61,12 @@ const Form = {
                 }else{
                     this.pass.seenPass = false
                 }
+                this.pass2.pass1 = event.target.value
             }
-        }
+        },
+        pass2Input(event) {
+            event.target.value !== this.pass2.pass1? this.pass2.seenPass2 = true: this.pass2.seenPass2 = false
+        },
     }
 }
 
