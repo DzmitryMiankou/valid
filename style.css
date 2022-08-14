@@ -49,3 +49,19 @@ button:hover {
   align-items: flex-end;
   }
 
+  .sex {
+    position: relative;
+    left: 50px;
+    top: 10px;
+  }
+a {
+  width: 190px;
+  background-color: rgb(243, 222, 165);
+  border-radius: 50px;
+  position: absolute;
+  z-index: 1;
+  text-align: center;
+  padding: 5px;
+  text-decoration: none;
+  color: black;
+}
