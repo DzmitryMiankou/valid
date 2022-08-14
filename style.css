@@ -21,6 +21,7 @@ h1 {
 
 input {
 border: none;
+width: 295px;
 }
 
 input[type="submit"] {

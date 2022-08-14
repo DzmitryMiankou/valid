@@ -20,14 +20,7 @@
           <label for="name">{{ name.name }}</label>
           <p v-if="name.seenName">{{ name.nameErrorText }}</p>
         </div>
-        <input
-          id="name"
-          type="text"
-          name="name"
-          size="47"
-          @input="nameImput"
-          required
-        />
+        <input id="name" type="text" name="name" @input="nameImput" required />
       </div>
       <div>
         <div class="error">
@@ -38,7 +31,6 @@
           id="family"
           type="text"
           name="family"
-          size="47"
           @input="familyImput"
           required
         />
@@ -52,7 +44,6 @@
           id="login"
           type="text"
           name="login"
-          size="47"
           @input="loginImput"
           required
         />
@@ -66,7 +57,6 @@
           id="password"
           type="password"
           name="pass1"
-          size="47"
           @input="passImput"
           required
         />
@@ -76,42 +66,21 @@
           <label for="password2">{{ pass2.pass2 }}</label>
           <p v-if="pass2.seenPass2">{{ pass2.passError2 }}</p>
         </div>
-        <input
-          id="password2"
-          type="password"
-          name="pass2"
-          size="47"
-          @input="pass2Input"
-          required
-        />
+        <input id="password2" type="password" @input="pass2Input" required />
       </div>
       <div>
         <div class="error">
           <label for="age">{{ age.age }}</label>
           <p v-if="age.seenAge">{{ age.ageError }}</p>
         </div>
-        <input
-          id="age"
-          type="text"
-          name="age"
-          size="47"
-          @input="ageInput"
-          required
-        />
+        <input id="age" type="text" name="age" @input="ageInput" required />
       </div>
       <div>
         <div class="error">
           <label for="mail">{{ mail.mail }}</label>
           <p v-if="mail.seenMail">{{ mail.mailError }}</p>
         </div>
-        <input
-          id="mail"
-          type="text"
-          name="mail"
-          size="47"
-          @input="mailInput"
-          required
-        />
+        <input id="mail" type="text" name="mail" @input="mailInput" required />
       </div>
       <label></label>
       <input
