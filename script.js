@@ -11,12 +11,12 @@ const Form = {
             name: {
                 name: `Ваше имя`, 
                 seenName: false,
-                nameErrorText: `ввели некоректное имя`,
+                nameErrorText: `некорректное имя`,
             },
             family: {
                 family: `Ваша фамилия`,
                 seenFamily: false,
-                familyErrorText: `ввели некоректную фамилию`,
+                familyErrorText: `некорректная фамилия`,
             },   
             login: {
                 login: `Логин`,
@@ -34,7 +34,7 @@ const Form = {
                 pass1: null,
                 seenPass2: false,
                 pass2: `Повторите пароль`,
-                passError2: `Пароль не совпадает`,
+                passError2: `пароль не совпадает`,
             },
             age: {
                 age: `Возраст`,
