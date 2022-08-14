@@ -38,12 +38,12 @@ const Form = {
             age: {
                 age: `Возраст`,
                 seenAge: false,
-                ageError: `не верный возраст`
+                ageError: `неверный возраст`
             },
             mail: {
                 mail: `E-mail`,
                 seenMail: false,
-                mailError: `не верный E-mail`,
+                mailError: `неверный E-mail`,
             },
             submit: {
                 submit: `Зарегистрироваться`,
