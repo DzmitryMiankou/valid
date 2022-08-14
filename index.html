@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1"
+    />
+    <title>form</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="https://unpkg.com/vue@next"></script>
+    <script type="module" src="script.js"></script>
+  </head>
+  <body>
+    <form id="form">
+      <h1>Регистрационная форма</h1>
+      <div>
+        <div class="error">
+          <label for="name">{{ name.name }}</label>
+          <p v-if="name.seenName">{{ name.nameErrorText }}</p>
+        </div>
+        <input
+          id="name"
+          type="text"
+          name="name"
+          size="47"
+          @input="nameImput"
+          required
+        />
+      </div>
+      <div>
+        <div class="error">
+          <label for="family">{{ family.family }}</label>
+          <p v-if="family.seenFamily">{{ family.familyErrorText }}</p>
+        </div>
+        <input
+          id="family"
+          type="text"
+          name="family"
+          size="47"
+          @input="familyImput"
+          required
+        />
+      </div>
+      <div>
+        <div class="error">
+          <label for="login">{{ login.login }}</label>
+          <p v-if="login.seenLogin">{{ login.loginErrorText }}</p>
+        </div>
+        <input
+          id="login"
+          type="text"
+          name="login"
+          size="47"
+          @input="loginImput"
+          required
+        />
+      </div>
+      <label>Пароль</label>
+      <input type="password" name="pass1" size="25" required />
+      <label>Повторите пароль</label>
+      <input type="password" name="pass2" size="25" required />
+      <label>Возраст</label>
+      <input type="text" name="age" size="25" required />
+      <label>E-mail</label>
+      <input type="text" name="mail" size="25" required />
+      <label></label>
+      <input type="submit" id="submit" value="Зарегистрироваться" required />
+    </form>
+  </body>
+</html>
+
+<!--	/* Проверить заполнение ВСЕХ полей формы:
+	- все поля должны быть обязательно заполнены;
+	- логин, пароль могут содержать только латинские буквы и цифры;
+	- длина пароля - не менее 6 символов
+	- содержимое поля пароль и повтор пароля должно совпадать;
+	- поле Возраст должно быть не пустым, допустимы числовые значения в диапазоне от 6 до 125 лет
+	- поле email должно содержать корректный адрес электронной почты.
+	В случае ошибки должно выдаваться соответствующее сообщение на каждое поле с ошибкой. Не использовать функцию alert!
+	В примере показаны две функции проверки: проверка типа validate1 используется при большом количестве полей формы с разнообразными проверками
+	
+	
+	Один из способов быстрого доступа к полям формы - через их уникальные имена name.
+	forma.ima - быстрый доступ к форме, ссылку на которую получили при передаче в аргументе при вызове функции в onsubmit, плюс обращение по имени к полю ввода "Имя" этой формы 	<input type="text" name="ima" size=25>	
+	*/  ">   -->
